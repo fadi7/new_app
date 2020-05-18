@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+//import screens
+import 'package:newapp/screens/home_screen.dart';
+//import components
 import 'package:newapp/components/welcome_page_slide.dart';
+//import packages
 import 'package:page_indicator/page_indicator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static String id = 'welcome_screen';
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -54,17 +60,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 8.0),
-                onPressed: () {},
                 color: Color(0xffFFBD34),
                 child: Text(
                   'ادخل التطبيق',
                   style: TextStyle(color: Color(0xff01192C), fontSize: 16.0),
                 ),
+                onPressed: () {
+                  _updateSeen();
+                  Navigator.pushNamed(context, HomeScreen.id);
+                },
               )
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _updateSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('seen', true);
   }
 }
