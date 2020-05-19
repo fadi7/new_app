@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 //import screens
 import 'package:newapp/screens/welcome_screen.dart';
 import 'package:newapp/screens/home_screen.dart';
+import 'package:newapp/utitities/app_theme.dart';
 //import packages
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -15,7 +15,6 @@ void main() async {
     _initScreen = WelcomeScreen.id;
   else
     _initScreen = HomeScreen.id;
-
   runApp(NewsApp(_initScreen));
 }
 
@@ -27,11 +26,7 @@ class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        textTheme: GoogleFonts.cairoTextTheme(
-          Theme.of(context).textTheme,
-        ),
-      ),
+      theme: AppTheme.appTheme,
       debugShowCheckedModeBanner: false,
       title: 'News App',
       initialRoute: this.initScreen,
