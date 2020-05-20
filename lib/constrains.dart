@@ -35,6 +35,10 @@ const kCardWriterStyle = TextStyle(
   fontSize: 12.0,
   color: Color(0xff667580),
 );
+const kCardBodyTextStyle = TextStyle(
+  fontSize: 12.0,
+  color: Color(0xff99a3aa),
+);
 
 const kTagTextStyle = TextStyle(
   color: Color(0xfffff1d2),
