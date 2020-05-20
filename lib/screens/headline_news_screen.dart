@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:newapp/shared_ui/screen_skeleton.dart';
 
-import 'home_tabs/tab_one.dart';
-import 'home_tabs/tab_two.dart';
 import 'home_tabs/tab_three.dart';
+import 'home_tabs/tab_two.dart';
 
-class HomeScreen extends StatefulWidget {
-  static String id = 'home_screen';
+class HeadlineNewsScreen extends StatefulWidget {
+  static String id = 'headline_news_screen';
+
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HeadlineNewsScreenState createState() => _HeadlineNewsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _HeadlineNewsScreenState extends State<HeadlineNewsScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(length: 3, vsync: this);
     super.initState();
   }
 
@@ -30,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return ScreenSkeleton(
-      appBarTitle: 'Explore',
+      appBarTitle: 'News',
       appBarTabBar: TabBar(
         indicatorColor: Color(0xff01192C),
         controller: _tabController,
@@ -42,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       scaffoldBody: TabBarView(
         children: <Widget>[
-          TabOne(),
+          TabThree(),
           TabTwo(),
           TabThree(),
         ],

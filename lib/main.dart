@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newapp/screens/headline_news_screen.dart';
 //import screens
 import 'package:newapp/screens/welcome_screen.dart';
 import 'package:newapp/screens/home_screen.dart';
@@ -33,6 +34,7 @@ class NewsApp extends StatelessWidget {
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         HomeScreen.id: (context) => HomeScreen(),
+        HeadlineNewsScreen.id: (context) => HeadlineNewsScreen(),
       },
     );
   }
