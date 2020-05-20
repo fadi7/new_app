@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:newapp/shared_ui/main_drawer.dart';
 
+import 'home_tabs/tab_one.dart';
+import 'home_tabs/tab_two.dart';
+import 'home_tabs/tab_three.dart';
+
 class HomeScreen extends StatefulWidget {
   static String id = 'home_screen';
   @override
@@ -63,9 +67,9 @@ class _HomeScreenState extends State<HomeScreen>
       drawer: MainDrawer(),
       body: TabBarView(
         children: <Widget>[
-          Text('screen 1'),
-          Text('screen 2'),
-          Text('screen 3'),
+          TabOne(),
+          TabTwo(),
+          TabThree(),
         ],
         controller: _tabController,
       ),
